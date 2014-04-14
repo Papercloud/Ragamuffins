@@ -21,7 +21,7 @@ And that's it. That's all the setup you have to do!
 Usage
 =====
 
-The gem gives you a new class method called `deleted_ids` which takes an array of ids as an argument. It will do a quick scan of the model, and let you know what is know longer in the database.
+The gem gives you a new class method called `show_deleted_ids` which takes an array of ids as an argument. It will do a quick scan of the model, and let you know what is know longer in the database.
 
 For example:
 
