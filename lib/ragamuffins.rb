@@ -10,6 +10,7 @@ end
 
 # Load All the stuff we need
 require 'ragamuffins/hooks'
+require 'ragamuffins/engine'
 
 # if not using Railtie, call `Ragamuffins::Hooks.init` directly
 if defined? Rails

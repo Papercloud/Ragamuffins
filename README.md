@@ -44,7 +44,6 @@ This is still a work in progress. So there is plenty left to do. If you want to 
 To Do
 =====
 
-* Write the tests
 * Allow a visibility parameter for objects that might have a visibility boolean attribute.
 
 
