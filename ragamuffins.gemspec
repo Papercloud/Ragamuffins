@@ -7,12 +7,11 @@ require "ragamuffins/version"
 Gem::Specification.new do |s|
   s.name        = "ragamuffins"
   s.version     = Ragamuffins::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Ragamuffins."
-  s.description = "TODO: Description of Ragamuffins."
-  s.license     = "MIT"
+  s.authors     = ["Isaac Norman"]
+  s.email       = ["idn@papercloud.com.au"]
+  s.homepage    = "http://www.github.com/RustComet/Ragamuffins"
+  s.summary     = "Find your orphans"
+  s.description = "A simple gem for finding out which objects have been orphaned on your iOS or Android App."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
