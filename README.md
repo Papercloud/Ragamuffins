@@ -7,6 +7,8 @@ Ragamuffins takes an array of object ids, and returns a list of the ones that no
 
 It was created after we made an iOS app that was having trouble with figuring out wheat existed on the backend and what no longer did. It sounds pretty simple, but when you add pagination to the mix things can get a little tricky. So this aims to solve that.
 
+It has been tested with Ruby `2.0.0`, `2.1.0` and `2.1.1`. Has only made for Rails 4 and up.
+
 Getting Started
 ===============
 
