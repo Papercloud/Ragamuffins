@@ -11,7 +11,7 @@ module Ragamuffins
         def self.show_deleted_ids(ids = [])
           return [] if ids == nil
 
-          ids.collect{|s| s.to_i} - self.where('id IN (?)', ids).map(&:id)
+          ids.collect{|s| s.to_i} - self.where("#{table_name}.id IN (?)", ids).map(&:id)
         end
       RUBY
     end
