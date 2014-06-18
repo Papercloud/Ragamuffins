@@ -10,6 +10,13 @@ module Ragamuffins
         return [] if ids == nil
 
         ids.collect{|s| s.to_i} - self.where("#{table_name}.id IN (?)", ids).map(&:id)
+        
+        #
+        # if we were passed some ids that forms a bad query, 
+        # just return them all as deleted instead of causing a 500.
+        # for example using "asdf" as an id.
+        rescue ActiveRecord::StatementInvalid
+          ids
       end
     end
   end
