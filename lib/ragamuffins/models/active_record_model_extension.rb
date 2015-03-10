@@ -8,11 +8,12 @@ module Ragamuffins
       #   Model.deleted_ids = []
       def self.show_deleted_ids(ids = [])
         return [] if ids == nil
+        # Because params are always strings, we double check that (the first to_s) and then make sure that we convert the ids to a string as well
+        # This allows us to make sure that we can handle UUIDs as well.
+        ids.collect{|s| s.to_s} - self.where("#{table_name}.id IN (?)", ids).map(&:id).map(&:to_s)
 
-        ids.collect{|s| s.to_i} - self.where("#{table_name}.id IN (?)", ids).map(&:id)
-        
         #
-        # if we were passed some ids that forms a bad query, 
+        # if we were passed some ids that forms a bad query,
         # just return them all as deleted instead of causing a 500.
         # for example using "asdf" as an id.
         rescue ActiveRecord::StatementInvalid
