@@ -10,7 +10,7 @@ module Ragamuffins
         return [] if ids == nil || ids.empty?
         # Because params are always strings, we double check that (the first to_s) and then make sure that we convert the ids to a string as well
         # This allows us to make sure that we can handle UUIDs as well.
-        ids.collect{|s| s.to_s} - self.where("#{table_name}.id IN (?)", ids).pluck(:id).map(&:to_s)
+        ids.collect{|s| s.to_s} - self.where("#{table_name}.id IN (?)", ids).pluck('CAST(id AS varchar)')
 
         #
         # if we were passed some ids that forms a bad query,

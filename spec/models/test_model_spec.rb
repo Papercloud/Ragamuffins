@@ -2,28 +2,6 @@ require_relative '../spec_helper'
 
 describe TestModel do
 
-
-  # I am new to Mocking. So just wanted to make sure that it worked like I expected it to.
-  describe "Mocking" do
-    let(:my_model) do
-      mock_model TestModel, id: 1,
-      name: "My Name",
-      about: "About Me"
-    end
-    it "assigns the ID" do
-      expect(my_model.id).to eq 1
-    end
-
-    it "assigns the name" do
-      expect(my_model.name).to eq "My Name"
-    end
-
-    it "assigns the about" do
-      expect(my_model.about).to eq "About Me"
-    end
-  end
-
-
   describe "Deleted IDs" do
     before :each do
       @model1 = FactoryGirl.create(:test_model)
@@ -55,7 +33,7 @@ describe TestModel do
 
     context "When some ids have been deleted" do
       before :each do
-        @deleted_id = @model2.id
+        @deleted_id = @model2.id.to_s
         @model2.destroy!
       end
 
